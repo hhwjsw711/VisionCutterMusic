@@ -319,9 +319,11 @@ export function ExportStep() {
               <span className="text-[var(--red)]"> {sceneDuration.toFixed(3)}s</span> per scene =
               <span className="text-[var(--yellow)]"> {formatTime(totalDuration)}</span> total
             </p>
-            <p className="text-xs text-[var(--text-muted)] mt-1">
-              {bpm} BPM → 1 beat = {(60/bpm).toFixed(3)}s → {beatsPerScene} beat{beatsPerScene > 1 ? 's' : ''} = {sceneDuration.toFixed(3)}s
-            </p>
+            {bpm && (
+              <p className="text-xs text-[var(--text-muted)] mt-1">
+                {bpm} BPM → 1 beat = {(60/bpm).toFixed(3)}s → {beatsPerScene} beat{beatsPerScene > 1 ? 's' : ''} = {sceneDuration.toFixed(3)}s
+              </p>
+            )}
           </div>
         </CardContent>
       </Card>
